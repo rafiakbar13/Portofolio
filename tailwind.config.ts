@@ -22,6 +22,9 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
+  plugins: [
+    nextui(),
+    require('tailwind-clip-path'),
+  ]
 }
 export default config

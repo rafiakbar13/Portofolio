@@ -2,27 +2,27 @@ import { Menu } from "../types/Menu";
 
 export const MENU: Menu[] = [
     {
-        id: 1,
+        id: 0,
         name: "About",
         url: "#about"
     },
     {
-        id: 2,
+        id: 1,
         name: "Skills",
         url: "#skills"
     },
     {
-        id: 3,
+        id: 2,
         name: "Experience",
         url: "#experience"
     },
     {
-        id: 4,
+        id: 3,
         name: "Education",
         url: "#education"
     },
     {
-        id: 5,
+        id: 4,
         name: "Projects",
         url: "#portfolio"
     },

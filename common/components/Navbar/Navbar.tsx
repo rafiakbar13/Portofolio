@@ -1,15 +1,13 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { MENU } from '@/common/constant/Menu';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { ThemeSwitcher } from '../ThemeSwitcher';
-import { HiBars3BottomRight } from 'react-icons/hi2';
 import useIsMobile from '@/hooks/useIsMobile';
 import { useMenu } from '@/context/menu';
 import MobileMenu from './MobileMenu';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Link } from '@nextui-org/link';
 
 
 export type Variants = {
@@ -29,11 +27,11 @@ const container: Variants = {
     }
 };
 
-const item: Variants = {
+const itemMenu: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
-        opacity: 1
+        opacity: 1,
     }
 };
 
@@ -48,7 +46,7 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
-            if (scrollTop > 50) {
+            if (scrollTop > 70) {
                 setScroll(true);
             } else {
                 setScroll(false);
@@ -61,16 +59,17 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`sticky top-0 left-0 right-0 bg-white dark:bg-black p-4 ${scroll ? 'shadow-md' : ""}`}>
+            <nav className={`sticky top-0 left-0 right-0 z-10 bg-white dark:bg-black p-4 ${scroll ? 'shadow-md' : ""}`}>
                 <div className='mx-auto flex items-center justify-between w-5/6'>
                     <div>
                         <h2 className='text-lg lg:text-2xl font-semibold'>&lt;Rafi /&gt;</h2>
                     </div>
                     <motion.div variants={container} initial="hidden" animate="visible" className='sm:flex items-center gap-3 lg:gap-5 border-slate-400 hidden text-sm md:text-base'>
-                        {MENU.map((item) => (
-                            <motion.div variants={item} key={item.name}>
+                        {MENU.map((item, index) => (
+                            <motion.div variants={itemMenu} key={index}>
                                 <Link
                                     href={item.url}
+                                    key={item.id}
                                     className={`hover:text-purple-400 hover:border-b-[1px] transition duration-300 ${pathName === item.url ? "text-purple-400 border-b-[1px]" : ""}`}
                                 >
                                     {item.name}
