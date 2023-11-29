@@ -7,13 +7,8 @@ import useIsMobile from '@/hooks/useIsMobile';
 import { useMenu } from '@/context/menu';
 import MobileMenu from './MobileMenu';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
-
-export type Variants = {
-    hidden: { y?: number, opacity: number, scale?: number };
-    visible: { y?: number; opacity: number, scale?: number, transition?: any };
-};
 
 const container: Variants = {
     hidden: { opacity: 1, scale: 0 },
@@ -35,21 +30,21 @@ const itemMenu: Variants = {
     }
 };
 
-
 const Navbar = () => {
     const pathName = usePathname();
 
     const isMobile = useIsMobile();
     const { isOpen, toggleMenu } = useMenu();
-    const [scroll, setScroll] = useState(false);
+    const [scrolled, setScrolled] = useState<Boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
-            if (scrollTop > 70) {
-                setScroll(true);
+            console.log(scrollTop);
+            if (scrollTop > 100) {
+                setScrolled(true);
             } else {
-                setScroll(false);
+                setScrolled(false);
             }
             window.addEventListener("scroll", handleScroll);
 
@@ -59,7 +54,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`sticky top-0 left-0 right-0 z-10 bg-white dark:bg-black p-4 ${scroll ? 'shadow-md' : ""}`}>
+            <nav className={`sticky top-0 left-0 right-0 z-50 bg-white dark:bg-black p-4 ${scrolled ? 'shadow-md' : ""}`}>
                 <div className='mx-auto flex items-center justify-between w-5/6'>
                     <div>
                         <h2 className='text-lg lg:text-2xl font-semibold'>&lt;Rafi /&gt;</h2>
