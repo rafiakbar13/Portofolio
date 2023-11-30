@@ -35,26 +35,22 @@ const Navbar = () => {
 
     const isMobile = useIsMobile();
     const { isOpen, toggleMenu } = useMenu();
-    const [scrolled, setScrolled] = useState<Boolean>(false);
+    const [scroll, setScroll] = useState<LocomotiveScroll | null>(null)
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            console.log(scrollTop);
-            if (scrollTop > 100) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-            window.addEventListener("scroll", handleScroll);
+        import("locomotive-scroll").then((locomotiveModule) => {
+            const locomotivescroll = new locomotiveModule.default()
+            setScroll(locomotivescroll)
+        })
+    }, [])
 
-            return () => window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    const handleScroll = (id: string) => {
+        scroll && scroll.scrollTo(id, { duration: 2 })
+    }
 
     return (
         <>
-            <nav className={`sticky top-0 left-0 right-0 z-50 bg-white dark:bg-black p-4 ${scrolled ? 'shadow-md' : ""}`}>
+            <nav className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black p-4`}>
                 <div className='mx-auto flex items-center justify-between w-5/6'>
                     <div>
                         <h2 className='text-lg lg:text-2xl font-semibold'>&lt;Rafi /&gt;</h2>
@@ -66,6 +62,7 @@ const Navbar = () => {
                                     href={item.url}
                                     key={item.id}
                                     className={`hover:text-purple-400 hover:border-b-[1px] transition duration-300 ${pathName === item.url ? "text-purple-400 border-b-[1px]" : ""}`}
+                                    onClick={() => handleScroll(item.url)}
                                 >
                                     {item.name}
                                 </Link>

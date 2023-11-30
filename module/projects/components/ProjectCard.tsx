@@ -4,7 +4,7 @@ import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Image, Link } from '@nextui-org/react';
 import { Chip } from "@nextui-org/react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import { useDisclosure } from "@nextui-org/react";
 import ProjectModal from './ProjectModal';
 type Props = {}
 
@@ -26,8 +26,8 @@ const ProjectCard = ({ project }: any) => {
                     </CardHeader>
                     <CardBody>
                         <div className='flex flex-wrap gap-2'>
-                            {project.tech.map((tech: any) => (
-                                <Chip color="secondary" className='dark:bg-slate-800 dark:text-purple-500'>{tech}</Chip>
+                            {project.tech.map((tech: any, index: number) => (
+                                <Chip key={index} color="secondary" className='dark:bg-slate-800 dark:text-purple-500'>{tech}</Chip>
                             ))}
                         </div>
                         <div className='mt-3'>

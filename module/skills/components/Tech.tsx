@@ -23,7 +23,7 @@ const container: Variants = {
 
 const Tech = () => {
     return (
-        <motion.section variants={container} className='my-32'>
+        <motion.section variants={container} className='my-32' id='skills'>
             <SectionHeading title='Tech Stack' icon={<GrTechnology />} />
             <SkillList />
         </motion.section>

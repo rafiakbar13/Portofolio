@@ -1,5 +1,5 @@
 export type Menu = {
-    id?: number;
+    id?: string | undefined;
     name: string;
     url: string;
     icon?: JSX.Element;

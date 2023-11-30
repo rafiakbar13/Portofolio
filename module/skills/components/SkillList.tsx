@@ -17,7 +17,7 @@ const itemMenu: Variants = {
 
 const SkillList = () => {
     return (
-        <motion.section variants={itemMenu} className='flex flex-wrap justify-center gap-5 mt-5'>
+        <motion.section variants={itemMenu} className='flex flex-wrap justify-center gap-5 mt-5 w-5/6 px-8'>
             {SKILLS.map((skill, index) => <SkillCard key={index} skill={skill} />)}
         </motion.section>
     )

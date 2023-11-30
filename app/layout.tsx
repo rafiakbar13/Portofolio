@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Providers } from './provider'
+import { ThemeProviders } from '@/common/providers/ThemeProvider'
+import { SmoothScrollProvider } from '@/common/providers/SmootScrollProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -17,9 +18,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>
+        <ThemeProviders>
+          <SmoothScrollProvider
+            options={{
+              smooth: true,
+              mobile: {
+                smooth: true,
+              },
+              tablet: {
+                smooth: true,
+              },
+            }}
+          >
+            {children}
+          </SmoothScrollProvider>
+        </ThemeProviders>
       </body>
     </html>
   )

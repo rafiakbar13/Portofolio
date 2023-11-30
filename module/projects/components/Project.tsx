@@ -8,7 +8,7 @@ type Props = {}
 const Project = async (props: Props) => {
     const projects = await getProjects()
     return (
-        <section className='' id='portofolio'>
+        <section className='mt-10' id='projects'>
             <SectionHeading title='Projects' icon={<GiUnstableProjectile />} />
             <ProjectList data={projects} />
         </section>
