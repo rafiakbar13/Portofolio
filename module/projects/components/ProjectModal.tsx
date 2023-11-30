@@ -2,7 +2,21 @@ import React from 'react'
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip } from '@nextui-org/react';
 import { Image } from '@nextui-org/react';
 import Link from 'next/link';
-type Props = {}
+type Props = {
+    project: {
+        id: string
+        name: string
+        description: string
+        tech: string[]
+        banner: {
+            url: string
+        }
+        linkGitHub: string
+        linkDemo: string
+    }
+    isOpen: boolean
+    onOpenChange: () => void
+}
 
 const ProjectModal = ({ project, isOpen, onOpenChange }: any) => {
     return (

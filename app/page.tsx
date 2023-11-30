@@ -1,7 +1,6 @@
 import Footer from '@/common/components/Footer'
 import Hero from '@/common/components/Hero'
 import Navbar from '@/common/components/Navbar/Navbar'
-import { ThemeSwitcher } from '@/common/components/ThemeSwitcher'
 import About from '@/module/About'
 import Project from '@/module/projects'
 import Tech from '@/module/skills'

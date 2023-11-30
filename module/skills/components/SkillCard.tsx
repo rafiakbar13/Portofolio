@@ -1,10 +1,6 @@
 import React from 'react'
 import { STACKS } from "@/common/constant/stack";
-import { motion } from 'framer-motion';
-export type Variants = {
-    hidden: { y?: number, opacity: number, scale?: number };
-    visible: { y?: number; opacity: number, scale?: number, transition?: any };
-};
+import { motion, Variants } from 'framer-motion';
 
 const itemMenu: Variants = {
     hidden: { y: 20, opacity: 0 },

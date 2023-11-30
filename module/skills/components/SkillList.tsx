@@ -1,11 +1,8 @@
 import React from 'react'
 import { SKILLS } from '@/common/constant/skills'
 import SkillCard from './SkillCard'
-import { motion } from 'framer-motion';
-export type Variants = {
-    hidden: { y?: number, opacity: number, scale?: number };
-    visible: { y?: number; opacity: number, scale?: number, transition?: any };
-};
+import { motion, Variants } from 'framer-motion';
+
 
 const itemMenu: Variants = {
     hidden: { y: 20, opacity: 0 },
@@ -17,7 +14,7 @@ const itemMenu: Variants = {
 
 const SkillList = () => {
     return (
-        <motion.section variants={itemMenu} className='flex flex-wrap justify-center gap-5 mt-5 w-5/6 px-8'>
+        <motion.section variants={itemMenu} className='flex flex-wrap justify-center gap-5 mt-5 w-5/6 mx-auto px-8'>
             {SKILLS.map((skill, index) => <SkillCard key={index} skill={skill} />)}
         </motion.section>
     )

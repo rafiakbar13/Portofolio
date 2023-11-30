@@ -3,7 +3,7 @@ import React from 'react'
 import { BiSolidBookReader } from 'react-icons/bi'
 import Summary from './Summary'
 import Profile from '@/common/components/Profile'
-import GithubGraph from './GithubGraph'
+// import GithubGraph from './GithubGraph'
 const About = () => {
     return (
         <section id='about' className='flex flex-col justify-center items-center mt-32'>
@@ -12,10 +12,9 @@ const About = () => {
                 <Profile image={'/images/Avatar-about.png'} className='w-72 h-72' />
                 <Summary />
             </div>
-            <div className='mt-10'>
+            {/* <div className='mt-10'>
                 <GithubGraph />
-            </div>
-
+            </div> */}
         </section>
     )
 }

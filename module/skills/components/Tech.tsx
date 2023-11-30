@@ -3,11 +3,8 @@ import SectionHeading from '@/common/components/SectionHeading'
 import React from 'react'
 import { GrTechnology } from 'react-icons/gr'
 import SkillList from './SkillList'
-import { motion } from 'framer-motion'
-export type Variants = {
-    hidden: { y?: number, opacity: number, scale?: number };
-    visible: { y?: number; opacity: number, scale?: number, transition?: any };
-};
+import { motion, Variants } from 'framer-motion'
+
 
 const container: Variants = {
     hidden: { opacity: 1, scale: 0 },

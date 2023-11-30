@@ -6,11 +6,21 @@ import { Image, Link } from '@nextui-org/react';
 import { Chip } from "@nextui-org/react";
 import { useDisclosure } from "@nextui-org/react";
 import ProjectModal from './ProjectModal';
-type Props = {}
+
+type ProjectProps = {
+    project: {
+        id: string
+        name: string
+        description: string
+        tech: string[]
+        banner: {
+            url: string
+        }
+    }
+}
 
 
-
-const ProjectCard = ({ project }: any) => {
+const ProjectCard = ({ project }: ProjectProps) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const trimmedDescription = project.description.substring(0, 100) + "..."
     const handleProjectClick = () => {

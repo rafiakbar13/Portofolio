@@ -2,9 +2,8 @@ import React from 'react'
 import { SOCIAL_MEDIA } from '../constant/Social'
 import Link from 'next/link'
 import { Tooltip } from "@nextui-org/tooltip";
-type Props = {}
 
-const SocialMedia = (props: Props) => {
+const SocialMedia = () => {
     return (
         <section>
             <div className='flex gap-x-4 mt-5'>
