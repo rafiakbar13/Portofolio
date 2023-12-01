@@ -45,7 +45,7 @@ const Navbar = () => {
     }, [])
 
     const handleScroll = (id: string) => {
-        scroll && scroll.scrollTo(id, { duration: 2 })
+        scroll && scroll.scrollTo(id, { duration: 1 })
     }
 
     return (

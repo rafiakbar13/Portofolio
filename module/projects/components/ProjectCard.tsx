@@ -2,11 +2,11 @@
 "use client"
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Image, Link } from '@nextui-org/react';
+import { Link } from '@nextui-org/react';
 import { Chip } from "@nextui-org/react";
 import { useDisclosure } from "@nextui-org/react";
 import ProjectModal from './ProjectModal';
-
+import Image from 'next/image';
 type ProjectProps = {
     project: {
         id: string
@@ -29,15 +29,17 @@ const ProjectCard = ({ project }: ProjectProps) => {
     return (
         <section className=''>
             <button onClick={handleProjectClick}>
-                <Card key={project.id} className='hover:scale-105 hover:drop-shadow-2xl hover:duration-700 h-[450px]' onPress={handleProjectClick}>
+                <Card key={project.id} className='hover:scale-105 hover:drop-shadow-2xl hover:duration-700 h-[480px]' onPress={handleProjectClick}>
                     <CardHeader className='p-3 rounded-md border-0'>
-                        <Image src={project.banner.url} width="100%" alt={project.name} shadow="sm"
-                            className='object-cover w-full rounded-lg' />
+                        <Image src={project.banner.url} alt={project.name} width={500} height={250}
+                            className='object-cover w-full rounded-lg'
+                            loading='lazy'
+                        />
                     </CardHeader>
                     <CardBody>
                         <div className='flex flex-wrap gap-2'>
                             {project.tech.map((tech: any, index: number) => (
-                                <Chip key={index} color="secondary" className='dark:bg-slate-800 dark:text-purple-500'>{tech}</Chip>
+                                <Chip key={index} color="secondary" className='bg-slate-800 text-purple-500 dark:bg-purple-700 dark:text-white'>{tech}</Chip>
                             ))}
                         </div>
                         <div className='mt-3'>

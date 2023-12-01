@@ -4,7 +4,7 @@ const key = process.env.NEXT_PUBLIC_HYGRAPH_KEY
 const HYGRAPH = `https://api-us-east-1-shared-usea1-02.hygraph.com/v2/${key}/master`
 
 export const getProjects = async () => {
-    const query = gql`
+  const query = gql`
     query ProjectLists {
     projectLists {
     createdAt
@@ -23,6 +23,6 @@ export const getProjects = async () => {
   }
 }
 `
-    const response = await request(HYGRAPH, query)
-    return response
+  const response = await request(HYGRAPH, query)
+  return response
 }

@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const HeroBgAnimation = (props: Props) => {
+const HeroBgAnimation = () => {
 
 
     return (

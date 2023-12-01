@@ -9,7 +9,7 @@ const SocialMedia = () => {
             <div className='flex gap-x-4 mt-5'>
                 {SOCIAL_MEDIA.map((item, index) => (
                     <Tooltip key={index} content={item.name}>
-                        <Link href={item.url} className='text-2xl text-gray-500 hover:text-gray-700 transition-colors duration-300'>
+                        <Link href={item.url} className='text-2xl text-gray-500 hover:text-gray-700 transition-colors duration-300' aria-label={`Visit ${item.name} profile`}>
                             {item.icon}
                         </Link>
                     </Tooltip>

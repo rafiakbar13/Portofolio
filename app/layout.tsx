@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProviders } from '@/common/providers/ThemeProvider'
 import { SmoothScrollProvider } from '@/common/providers/SmootScrollProvider'

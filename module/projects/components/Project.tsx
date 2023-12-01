@@ -15,7 +15,7 @@ type Project = {
 };
 
 const Project = () => {
-    const [projects, setProjects] = useState<Project[] | null>(null); // Initialize as null
+    const [projects, setProjects] = useState<Project[] | null>(null);
 
     const fetchProjects = async () => {
         try {

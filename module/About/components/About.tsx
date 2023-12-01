@@ -9,7 +9,7 @@ const About = () => {
         <section id='about' className='flex flex-col justify-center items-center mt-32'>
             <SectionHeading title='About' icon={<BiSolidBookReader />} />
             <div className='flex flex-col lg:flex-row items-center justify-center pt-4'>
-                <Profile image={'/images/Avatar-about.png'} className='w-72 h-72' />
+                <Profile image={'/images/Avatar-about.webp'} alt='Rafi' className='w-72 h-72' />
                 <Summary />
             </div>
             {/* <div className='mt-10'>

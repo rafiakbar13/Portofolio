@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <main data-scroll-container className="flex flex-col items-center max-w-7xl">
+      <main data-scroll-container className="flex flex-col items-center max-w-7xl mx-auto">
         <About />
         <Tech />
         <Project />
