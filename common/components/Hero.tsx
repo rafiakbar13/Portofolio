@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { Button } from "@nextui-org/button";
 import Link from 'next/link'
 
-const RESUME_URL = "https://res.cloudinary.com/druic0cle/image/upload/v1696232127/Muhammad_Rafi_Akbar_Resume-2_page-0001_tedx05.jpg"
+const RESUME_URL = "https://res.cloudinary.com/druic0cle/image/upload/v1701412170/Muhammad_Rafi_Akbar_FE-1_qobxpb.jpg"
 
 
 const Hero = () => {
